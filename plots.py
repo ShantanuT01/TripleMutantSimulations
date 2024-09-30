@@ -15,7 +15,8 @@ def plot_data(df, title, filename, start, end):
     plt.clf()
 
 if __name__ == "__main__":
-    state = "y"
+    # replace state with w or y to get the respective state 
+    state = "w"
     aerobic_df = pd.read_csv(f"aerobic_{state}_rmit.csv")
     hypoxic_df = pd.read_csv(f"hypoxic_{state}_rmit.csv")
     aerobic_df = aerobic_df[aerobic_df["rmit_factor"].between(5, 100)]
@@ -33,5 +34,5 @@ if __name__ == "__main__":
     fig.supylabel('Component Concentration Normalized')
     #fig.legend(lines, labels, loc = (0.5, 0), ncol=5)
     fig.set_size_inches(6, 8, forward=True)
-    plt.savefig("figures/aerobic_vs_hypoxic_plot.tiff",dpi=300)
+    plt.savefig("figures/w_aerobic_vs_hypoxic_plot.tiff",dpi=300)
     plt.show()
